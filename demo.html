@@ -1,0 +1,113 @@
+<style>
+  .e-section.m-lg-tb3.m-sm-tb1 {
+    --prime: #27aae1;
+    --blue: #1a73e8;
+    --darkblue: #0d336d;
+    --navyblue: #0d336d;
+    --red: #f00;
+    --green: #5ecf80;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    font-variant-ligatures: no-common-ligatures;
+    padding: 0px;
+    border: none;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+    -webkit-box-sizing: border-box;
+    font-family: "Roboto", Arial, sans-serif;
+    color: #333;
+    margin: 1rem 0px;
+  }
+</style>
+
+<section class="e-section m-lg-tb3 m-sm-tb1" id="s-ortala">
+  <div class="e-section e-container">
+    <div class="e-sectionrow e-row">
+      <div
+        class="e-modulecol ecol-lg-12 ecol-md-12 ecol-sm-12"
+        id="module-giris"
+      >
+        <div class="e-row e-flex e-flex-h-center">
+          <div class="ecol-lg-7 ecol-md-7 ecol-sm-12">
+            <div class="memberform">
+              <div class="maintitle">Hesabınıza Giriş Yapın</div>
+              <div class="maindesc">
+                Giriş yaparak eğitimlerinizi yönetebilir, yeni eğitimler satın
+                alabilir ve online eğitimleri sistem üzerinden
+                görüntüleyebilirsiniz.
+              </div>
+              <form
+                id="loginsend"
+                method="post"
+                onsubmit="eform('membership','loginsend','loginsend'); return false;"
+                data-bitwarden-watching="1"
+              >
+                <div class="formstyle1 formitem" id="formitem-loginemail">
+                  <fieldset>
+                    <input
+                      class="input"
+                      type="email"
+                      name="loginemail"
+                      id="loginemail"
+                      placeholder="E-Mail"
+                    />
+                  </fieldset>
+                  <div class="feedback"></div>
+                </div>
+                <div class="formstyle1 formitem" id="formitem-loginpassword">
+                  <fieldset>
+                    <input
+                      class="input"
+                      type="password"
+                      name="loginpassword"
+                      id="loginpassword"
+                      placeholder="Şifre"
+                    />
+                  </fieldset>
+                  <div class="feedback"></div>
+                </div>
+                <div class="formstyle1 formitem between">
+                  <div class="form-link">
+                    <a href="/sifre-sifirla">Şifremi Unuttum</a>
+                  </div>
+                  <div class="checkbutton e-flex e-flex-h-end">
+                    <input
+                      class="checkbox"
+                      name="rememberme"
+                      type="checkbox"
+                      value="1"
+                      id="rememberme"
+                    />
+                    <label for="rememberme">Beni Hatırla</label>
+                  </div>
+                </div>
+                <div class="formstyle1">
+                  <button
+                    class="button blue large full"
+                    id="btn-loginsend"
+                    type="submit"
+                  >
+                    Giriş Yap
+                  </button>
+                  <div class="buttonload blue large" id="btnload-loginsend">
+                    <div class="load1"></div>
+                    <div class="load2"></div>
+                  </div>
+                </div>
+                <div class="resultmessage m-t1"><div></div></div>
+              </form>
+
+              <div class="formstyle1 m-t1">
+                <div class="buttonborder-box black large full">
+                  Mindset hesabınız yokmu?
+                  <a href="/uyelik-planlari">Yeni hesap oluştur.</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

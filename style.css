@@ -1,0 +1,155 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  background: oldlace;
+  color: black;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px 8px 0 0;
+  position: sticky;
+  top: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+}
+
+ul {
+  display: flex;
+  gap: 5px;
+  list-style-type: none;
+}
+
+.logo {
+  white-space: nowrap;
+  font-weight: bold;
+  transform: rotate(-30deg);
+}
+
+li {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+}
+
+.modal {
+  display: none;
+}
+
+.show-modal .container {
+  position: fixed;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.show-modal .shadow {
+  position: absolute;
+  top: 40px;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  background: linear-gradient(transparent, rgb(0, 0, 0));
+}
+
+.show-modal .modal {
+  display: block;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.show-modal .modal.h110 {
+  height: 120vh;
+}
+
+.modal-content__wrapper {
+  position: fixed;
+  bottom: 0;
+  transform: translateY(100%);
+  background-color: #fff;
+  min-height: 100vh;
+  padding: 10px;
+}
+
+.active {
+  top: 100vh;
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  flex-direction: column;
+  width: 100%;
+
+  /* transition: transform 750ms ease-out 0s; */
+  position: absolute;
+  padding: 0px;
+  max-width: none;
+  overflow: hidden;
+  animation-name: drawerAnimation;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes drawerAnimation {
+  from {
+    transform: translate(0px, 100%);
+  }
+
+  to {
+    transform: translate(0px, -52vh);
+  }
+}
+
+@keyframes drawerAnimationReverse {
+  from {
+    transform: translate(0px, -52vh);
+  }
+
+  to {
+    transform: translate(0px, 100%);
+  }
+}
+
+.active.reverse {
+  animation-name: drawerAnimationReverse;
+}
+
+#modalHide {
+  display: block;
+  margin: auto;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  min-width: 720px;
+}
+
+figure img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+iframe {
+  margin-top: 30px;
+}

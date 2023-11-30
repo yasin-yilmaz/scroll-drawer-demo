@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mindset LMS</title>
+    <meta name="description" content="Mindset LMS" />
+    <meta name="keywords" content="Mindset LMS" />
+    <meta http-equiv="content-language" content="tr-TR" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./css/app.min.css"
+    />
+  </head>
+
+  <body>
+    <!--eLogin-->
+    <div class="eflex eflex-ai-center">
+      <div class="eborderbox">
+        <form class="elogin" action="#" id="login">
+          <h1 class="title">Please Login</h1>
+
+          <div class="eforms-item" id="valid-email">
+            <fieldset class="eforms-fieldset">
+              <input
+                type="text"
+                class="eforms-input"
+                id="email"
+                name="email"
+                placeholder="Email"
+              />
+            </fieldset>
+            <div class="feedback"></div>
+          </div>
+
+          <div class="eforms-item" id="valid-password">
+            <fieldset class="eforms-fieldset">
+              <input
+                type="password"
+                class="eforms-input"
+                id="password"
+                name="password"
+                placeholder="Şifre"
+              />
+            </fieldset>
+            <div class="feedback"></div>
+          </div>
+
+          <div class="egrid-section emb-20px">
+            <div class="egrid-row">
+              <div class="egrid-col-6">
+                <div class="eforms-item borderbox" id="valid-readme">
+                  <label class="eforms-checkbox checkbox" for="readme">
+                    <input
+                      class="checkbox"
+                      type="checkbox"
+                      name="readme"
+                      value="1"
+                      id="readme"
+                    />
+                    <div class="box"></div>
+                    <div class="label">Beni Hatırla</div>
+                  </label>
+                  <div class="eforms-feedback"></div>
+                </div>
+              </div>
+              <div class="egrid-col-6">
+                <div class="elinkbox">
+                  <a href="sifremi-unuttum.html">Şifremi Unuttum</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="eforms-item emb-10px">
+            <button
+              class="eforms-button loading1 ew-100"
+              id="btn-login"
+              type="submit"
+            >
+              Giriş Yap
+            </button>
+          </div>
+
+          <div class="elinkbox bold ew-100">
+            <span>Hesabınız Yokmu?</span>
+            <a href="signup.html">Yeni Hesap oluştur</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
