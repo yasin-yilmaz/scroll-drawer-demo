@@ -36,7 +36,6 @@ const showModal = () => {
     document
       .querySelector(".modal-content__wrapper")
       .addEventListener("animationend", (e) => {
-        console.log("animation end");
         document.body.classList.add("section2");
       });
     document.querySelector(".modal").classList.toggle("h110");
@@ -53,7 +52,7 @@ const moveBottom = () => {
       "scrollend",
       () => {
         windowScollPos = window.scrollY;
-        console.log(windowScollPos);
+
         document.body.classList.remove("section2");
         document.removeEventListener("scroll", showModal, { passive: true });
         document.removeEventListener("scroll", moveBottom, { passive: true });
