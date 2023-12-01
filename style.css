@@ -151,5 +151,14 @@ figure img {
 }
 
 iframe {
-  margin-top: 30px;
+  margin: 0;
+}
+
+.dummy-text {
+  max-width: 360px;
+  margin: 10px auto;
+}
+
+.dummy-text p {
+  margin: 0;
 }

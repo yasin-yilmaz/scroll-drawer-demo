@@ -1,18 +1,20 @@
 import "./style.css";
 
-function disableScroll() {
-  let scrollTop = window.scrollY;
-  let scrollLeft = window.scrollX;
-  window.onscroll = function () {
-    window.scrollTo(scrollLeft, scrollTop);
-  };
-}
+// function disableScroll() {
+//   let scrollTop = window.scrollY;
+//   let scrollLeft = window.scrollX;
+//   window.onscroll = function () {
+//     window.scrollTo(scrollLeft, scrollTop);
+//   };
+// }
 
-function enableScroll() {
-  window.onscroll = undefined;
-}
+// function enableScroll() {
+//   window.onscroll = undefined;
+// }
 
 const hideBtn = document.querySelector("#modalHide");
+const modal = document.querySelector(".modal");
+let windowScollPos;
 
 let init = true;
 
@@ -30,14 +32,45 @@ const showModal = () => {
       .querySelector(".modal-content__wrapper")
       .addEventListener("animationstart", (e) => {
         window.scrollTo({ top: 0 });
-        disableScroll();
       });
     document
       .querySelector(".modal-content__wrapper")
       .addEventListener("animationend", (e) => {
-        enableScroll();
+        console.log("animation end");
+        document.body.classList.add("section2");
       });
     document.querySelector(".modal").classList.toggle("h110");
+  }
+};
+
+const moveBottom = () => {
+  if (document.body.classList.contains("section2")) {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: "smooth",
+    });
+    document.addEventListener(
+      "scrollend",
+      () => {
+        windowScollPos = window.scrollY;
+        console.log(windowScollPos);
+        document.body.classList.remove("section2");
+        document.removeEventListener("scroll", showModal, { passive: true });
+        document.removeEventListener("scroll", moveBottom, { passive: true });
+        document.body.classList.add("section3");
+        document.removeEventListener("scroll", moveBottom, { passive: true });
+      },
+      { passive: true }
+    );
+  }
+};
+
+const startHideModal = () => {
+  if (document.body.classList.contains("section3")) {
+    document.removeEventListener("scroll", moveBottom, { passive: true });
+    if (window.scrollY + 10 < windowScollPos) {
+      hideModal();
+    }
   }
 };
 
@@ -58,6 +91,15 @@ const hideModal = () => {
 };
 
 if (init) {
-  document.addEventListener("scroll", showModal);
-  hideBtn.addEventListener("click", hideModal);
+  document.addEventListener("scroll", showModal, { passive: true });
+  document.addEventListener("scroll", moveBottom, { passive: true });
+  document.addEventListener("scroll", startHideModal, { passive: true });
+  hideBtn.addEventListener("click", hideModal, { passive: true });
 }
+
+document.getElementById("bottom").addEventListener("click", () => {
+  window.scrollTo({
+    top: window.innerHeight,
+    behavior: "smooth",
+  });
+});
