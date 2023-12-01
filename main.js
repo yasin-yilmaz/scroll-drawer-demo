@@ -48,19 +48,19 @@ const moveBottom = () => {
       top: window.innerHeight,
       behavior: "smooth",
     });
-    document.addEventListener(
-      "scrollend",
-      () => {
-        windowScollPos = window.scrollY;
+    const moveCallBack = () => {
+      windowScollPos = window.scrollY;
+      document.body.classList.remove("section2");
+      document.removeEventListener("scroll", showModal, { passive: true });
+      document.removeEventListener("scroll", moveBottom, { passive: true });
+      document.body.classList.add("section3");
+      document.removeEventListener("scroll", moveBottom, { passive: true });
+      document.removeEventListener("scrollend", moveCallBack, {
+        passive: true,
+      });
+    };
 
-        document.body.classList.remove("section2");
-        document.removeEventListener("scroll", showModal, { passive: true });
-        document.removeEventListener("scroll", moveBottom, { passive: true });
-        document.body.classList.add("section3");
-        document.removeEventListener("scroll", moveBottom, { passive: true });
-      },
-      { passive: true }
-    );
+    document.addEventListener("scrollend", moveCallBack, { passive: true });
   }
 };
 
